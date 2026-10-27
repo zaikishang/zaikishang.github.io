@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>zaikishang</title>
+<meta name="description" content="找出多跳问题里中间那一步缺失的证据">
+<style>
+:root{
+  --bg:#0a0a12; --fg:#e8e8f0; --muted:#8a8a9c; --line:#1c1c28;
+  --card:#12121c; --accent:#a78bfa; --accent2:#38bdf8;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0; color:var(--fg); background:#0a0a12;background-image:linear-gradient(200deg,#0a0a12 0%,#2d2645 55%,#0a0a12 100%);background-attachment:fixed;
+  font-family:"Kaiti SC", "STKaiti", "KaiTi", "Noto Serif SC", serif;
+  font-size:16.5px; line-height:1.82; letter-spacing:.005em;
+}
+main{max-width:860px; margin:0 auto; padding:72px 24px 110px}
+h1,h2,h3{line-height:1.28; letter-spacing:-.01em; font-weight:650}
+a{color:var(--accent2); text-decoration:none; border-bottom:1px solid transparent}
+a:hover{border-bottom-color:var(--accent2)}
+.eyebrow{margin:0 0 14px; font-size:12.5px; color:var(--muted);
+  letter-spacing:.16em; text-transform:uppercase}
+.hero{padding-bottom:40px; border-bottom:1px solid var(--line)}
+.hero h1{margin:0; font-size:40px; font-weight:650}
+.tagline{margin:16px 0 0; font-size:18px; color:var(--muted); max-width:36em}
+.links{margin:16px 0 0; font-size:15px}
+section{padding:42px 0; border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{margin:0 0 20px; font-size:13px; font-weight:650; color:var(--muted)}
+.about p{margin:0 0 18px; font-size:1.05em}
+ul.traits{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+ul.traits li{padding-left:22px; position:relative}
+ul.traits li::before{content:""; position:absolute; left:2px; top:.74em;
+  width:8px; height:8px; border-radius:50%; background:var(--accent)}
+.grid{display:grid; gap:14px}
+@media(min-width:660px){ .grid.two{grid-template-columns:1fr 1fr} }
+.card h3{margin:0 0 8px; font-size:17px; font-weight:650}
+.card p{margin:0; color:var(--muted); font-size:15px}
+.card .status{display:inline-block; margin-top:12px; font-size:12px;
+  color:var(--accent); letter-spacing:.06em}
+ul.repos{list-style:none; margin:0; padding:0}
+ul.repos li{padding:16px 0; border-bottom:1px dashed var(--line)}
+ul.repos li:last-child{border-bottom:0}
+ul.repos .name{font-weight:650}
+ul.repos .desc{color:var(--muted); font-size:15px; margin-top:2px}
+ul.tags{display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none}
+ol.timeline{list-style:none; margin:0; padding:0 0 0 22px}
+ol.timeline li{position:relative; padding:0 0 24px 20px}
+ol.timeline li:last-child{padding-bottom:0}
+ol.timeline li::before{content:""; position:absolute; left:-27px; top:.62em;
+  width:9px; height:9px; border-radius:50%; border:1px solid var(--accent)}
+ol.timeline .when{display:block; font-size:12px; color:var(--muted);
+  letter-spacing:.08em; margin-bottom:2px}
+footer{padding-top:40px; border-top:1px solid var(--line); margin-top:40px}
+footer .mission{margin:0 0 10px; font-size:1.05em}
+footer .note{margin:0; color:var(--muted); font-size:14px}
+.hero h1{font-size:16.5px ;font-weight:800;letter-spacing:-.03em;line-height:1.05;text-transform:uppercase}
+h2{color:#e8e8f0;text-transform:none;letter-spacing:-.01em;font-size:22px;font-weight:700}
+.card{background:#12121c;border:1px solid #1c1c28;border-radius:8px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.09)}
+
+
+</style>
+</head>
+<body>
+<main>
+
+<header class="hero">
+  <p class="eyebrow">多跳推理缺口</p>
+  <h1>zaikishang</h1>
+  <p class="tagline">找出多跳问题里中间那一步缺失的证据</p>
+  <p class="links"><a href="https://github.com/zaikishang" rel="noopener">GitHub 主页</a></p>
+</header>
+
+<section class="about" id="about">
+  <h2>关于</h2>
+  <p>多跳推理缺口是我的主要工作方向。</p>
+  <ul class="traits">
+    <li>不说「不好」，说「哪里不成立、为什么」。</li>
+    <li>每个批评都配一个替代方案。</li>
+    <li>好的做法也值得被记下来。</li>
+  </ul>
+</section>
+
+<section id="research">
+  <h2>研究方向</h2>
+  <div class="grid two">
+    <article class="card">
+      <h3>多跳推理缺口的基线选择与对照设计</h3>
+    </article>
+    <article class="card">
+      <h3>多跳推理缺口的判定依据与复核方式</h3>
+    </article>
+    <article class="card">
+      <h3>多跳推理缺口里容易误判的情形与反例</h3>
+    </article>
+  </div>
+</section>
+
+<section id="work">
+  <h2>开源</h2>
+  <ul class="repos">
+    <li><div class="name"><a href="https://github.com/zaikishang/multihopgap" rel="noopener">multihopgap</a></div>
+      <div class="desc">把多跳问题拆成跳链，标出链条中没有任何文档支撑的那一跳</div>
+    </li>
+  </ul>
+</section>
+
+<section id="hobbies">
+  <h2>业余</h2>
+  <ul class="tags">
+    <li>养多肉</li>
+    <li>整理别人的结论</li>
+    <li>复现公开的结果</li>
+  </ul>
+</section>
+
+<section id="timeline">
+  <h2>时间线</h2>
+  <ol class="timeline">
+    <li>
+      <span class="when">2026-10-27</span>
+      注册 GitHub 账号。
+    </li>
+    <li>
+      <span class="when">2026-10-27</span>
+      开源 multihopgap，用于处理多跳推理缺口相关的问题。
+    </li>
+  </ol>
+</section>
+
+<footer>
+  <p class="mission">让多跳推理缺口这件事在开源社区里能被复用。</p>
+  <p class="note">这个页面在生长。每一次真实的提交都会被记下来。</p>
+</footer>
+
+</main>
+</body>
+</html>
